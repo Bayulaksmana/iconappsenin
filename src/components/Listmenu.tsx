@@ -1,7 +1,3 @@
-import { role } from "@/lib/data";
-import Image from "next/image";
-import Link from "next/link";
-
 const menuItems = [
   {
     title: "MENU",
@@ -31,10 +27,10 @@ const menuItems = [
         visible: ["admin", "teacher"],
       },
       {
-      icon: "/subject.png",
-      label: "Subjects",
-      href: "/list/subjects",
-      visible: ["admin"],
+        icon: "/subject.png",
+        label: "Subjects",
+        href: "/list/subjects",
+        visible: ["admin"],
       },
       {
         icon: "/class.png",
@@ -61,10 +57,10 @@ const menuItems = [
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-      icon: "/result.png",
-      label: "Results",
-      href: "/list/results",
-      visible: ["admin", "teacher", "student", "parent"],
+        icon: "/result.png",
+        label: "Results",
+        href: "/list/results",
+        visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/attendance.png",
@@ -116,45 +112,3 @@ const menuItems = [
     ],
   },
 ];
-
-const Menu = () => {
-  return (
-    <div className="mt-4 text-sm">
-      {menuItems.map((i) => (
-        <div className="flex flex-col gap-2" key={i.title}>
-          <span className="hidden lg:block text-gray-500 font-semibold my-4 mb-2 mx-11">
-            {i.title}
-          </span>
-          {/* Menampilkan data dengan data pada array yang tersedia
-          
-          {i.items.map((item) => (
-            <Link
-              href={item.href}
-              key={item.label}
-              className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-1"
-            >
-              <Image src={item.icon} alt="icon" width={20} height={20} />
-              <span className="hidden lg:block">{item.label}</span>
-            </Link>
-          ))} */}
-          {i.items.map((item) => {
-            if(item.visible.includes(role)){
-                return (
-                  <Link
-                    href={item.href}
-                    key={item.label}
-                    className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-1 md:px-2 rounded-md hover:bg-lamaSkyLight"
-                  >
-                    <Image src={item.icon} alt="icon" width={20} height={20} />
-                    <span className="hidden lg:block">{item.label}</span>
-                  </Link>
-                );
-            }
-          })}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default Menu;
