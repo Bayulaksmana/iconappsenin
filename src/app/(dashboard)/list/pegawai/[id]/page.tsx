@@ -1,4 +1,6 @@
+import Announcement from "@/components/Announcement";
 import BigCalendar from "@/components/BigCalendar";
+import Performance from "@/components/Performance";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -91,6 +93,8 @@ return (
         <Link className="p-3 rounded-md bg-lamaSky" href="/download">Download</Link>
       </div>
     </div>
+    <Performance/>
+    <Announcement/>
     </div>
 </div>
 );
