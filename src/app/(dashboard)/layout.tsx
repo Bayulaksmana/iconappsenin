@@ -13,7 +13,7 @@ children,
             <Link href="/" className="flex items-center justify-center lg:justify-start gap-2">
             <Image src="https://iofficeplus.iconpln.co.id/backoffice/img/new_logo.92d1bbb0.svg" alt="logo" width={32}
                 height={32} />
-            <span className="hidden lg:block font-bold">ICON APP(SENIN)</span>
+            <span className="hidden lg:block font-bold">ICON APPSENIN</span>
             </Link>
             <Menu />
         </div>

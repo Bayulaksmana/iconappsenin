@@ -3,7 +3,7 @@ import AttendanceChart from "@/components/AttendanceChart";
 import CountChart from "@/components/CountChart";
 import EventCalendar from "@/components/EventCalendar";
 import UserCard from "@/components/UserCard";
-import AssigmentListData from "../list/assignments/page";
+import PegawaiListPage from "../list/pegawai/page";
 
 const AdminPage = () => {
 return (
@@ -12,10 +12,10 @@ return (
     <div className="w-fulll lg:w-2/3 flex flex-col gap-6">
         {/* Tampilan note untuk info data jumlah*/}
         <div className="flex gap-4 justify-between flex-wrap">
-            <UserCard type="student" />
-            <UserCard type="teacher" />
-            <UserCard type="parent" />
-            <UserCard type="staff" />
+            <UserCard type="Absen" />
+            <UserCard type="Cuti" />
+            <UserCard type="Lembur" />
+            <UserCard type="Sakit" />
         </div>
 
         {/* {Tampilan grafik bagian tengah} */}
@@ -31,7 +31,7 @@ return (
         </div>
         {/* {Tampilan grafik bagian bawah} */}
         <div className="w-full h-[500px]">
-            <AssigmentListData />
+            <PegawaiListPage />
         </div>
     </div>
     {/* RIGHT */}

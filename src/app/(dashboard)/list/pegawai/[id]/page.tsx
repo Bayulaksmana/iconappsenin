@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ImageResponse } from "next/server";
 
-const SingleTeacherPage = () => {
+const SinglePegawaiPage = () => {
   return (
     <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
       {/* Bagian Kiri */}
@@ -116,4 +116,4 @@ const SingleTeacherPage = () => {
   );
 };
 
-export default SingleTeacherPage;
+export default SinglePegawaiPage;
