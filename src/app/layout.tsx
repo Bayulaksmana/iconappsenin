@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 title: "ICON APPSENIN",
-description: "Next.js Aplikasi Absesnsi",
+description: "Next.js Aplikasi Absensi",
 };
 
 export default function RootLayout({
