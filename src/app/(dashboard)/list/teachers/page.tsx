@@ -19,21 +19,22 @@ address:string;
 
 const columns = [
 {
-header: "Info",
+header: "Full Name & Email",
 accessor: "info",
+className: "item-center",
 },
 {
-header: "Teacher ID",
+header: "NIP Pegawai",
 accessor: "teacherId",
 className: "hidden md:table-cell",
 },
 {
-header: "Subjects",
+header: "Jabatan",
 accessor: "subjects",
 className: "hidden md:table-cell",
 },
 {
-header: "Classes",
+header: "Aplikasi",
 accessor: "classes",
 className: "hidden md:table-cell",
 },
@@ -61,7 +62,7 @@ const renderRow = (item:Teacher) => (
     <td className="flex items-center gap-4 p-4">
         <Image src={item.photo} alt="" width={40} height={40}
             className="md:hidden xl:block w-10 h-10 rounded-full object-cover" />
-        <div className="flex flex-col">
+        <div className="flex flex-col ice">
             <h3 className="font-semibold">{item.name}</h3>
             <p className="text-xs text-gray-500">{item?.email}</p>
         </div>
@@ -91,7 +92,7 @@ return (
 <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
     {/* Bagian TOP */}
     <div className="flex items-center justify-between">
-        <h1 className="hidden md:block text-lg font-semibold">All Teachers</h1>
+        <h1 className="hidden md:block text-lg font-semibold">Pegawai</h1>
         <div className="flex flex-col md:flex-row items-center gap-4 md:w-auto">
             <TableSearch />
             <div className="flex items-center gap-4 self-end">
