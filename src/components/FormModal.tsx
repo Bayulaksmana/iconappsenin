@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import PegawaiForm from "./forms/PegawaiForm";
 
 const FormModal = ({
 table,
@@ -39,7 +40,7 @@ return type === "delete" && id ? (
     <button className="bg-LamaYellow text-black py-2 px-4 rounded-md border-none w-max self-center">Delete</button>
 </form>
 ) : (
-"Create or update form"
+<PegawaiForm type="create" data={data}/>
 );
 };
 

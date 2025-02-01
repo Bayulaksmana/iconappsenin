@@ -4,6 +4,7 @@ import CountChart from "@/components/CountChart";
 import EventCalendar from "@/components/EventCalendar";
 import UserCard from "@/components/UserCard";
 import PegawaiListPage from "../list/pegawai/page";
+import AbsenListData from "../list/absensi/page";
 
 const AdminPage = () => {
 return (
@@ -31,7 +32,7 @@ return (
         </div>
         {/* {Tampilan grafik bagian bawah} */}
         <div className="w-full h-[500px]">
-            <PegawaiListPage />
+            <AbsenListData />
         </div>
     </div>
     {/* RIGHT */}

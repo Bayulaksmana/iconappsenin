@@ -61,10 +61,15 @@ const columns = [
 
 const AbsenListData = () => {
 const renderRow = (item: Absen) => (
-<tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-LamaPurpleLight ">
+  <tr
+    key={item.id}
+    className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-LamaPurpleLight "
+  >
     <td className="flex items-center gap-4 p-4 font-semibold">
-        {item.title} <br />
-        {item?.nip}
+      <div className="">
+        <h1>{item.title}</h1>
+        <p className="text-xs text-gray-500">{item?.nip}</p>
+      </div>
     </td>
     <td>{item.jadwal}</td>
     <td>{item.class}</td>
@@ -73,21 +78,20 @@ const renderRow = (item: Absen) => (
     <td className="hidden md:table-cell">{item.endTime}</td>
     <td className="hidden md:table-cell">{item.status}</td>
     <td className="hidden md:table-cell">
-        <div className="flex items-center gap-2">
-            <Link href={`/list/pegawai/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
-                <Image src={"/edit.png"} alt="" width={16} height={16} />
-            </button>
-            </Link>
-            {/* {role === "admin" && (
+      <div className="flex items-center gap-2">
+        <Link href={`/list/pegawai/${item.id}`}>
+          <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+            <Image src={"/edit.png"} alt="" width={16} height={16} />
+          </button>
+        </Link>
+        {/* {role === "admin" && (
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-LamaPurple">
                 <Image src={"/delete.png"} alt="" width={16} height={16} />
             </button>
             )} */}
-
-        </div>
+      </div>
     </td>
-</tr>
+  </tr>
 );
 
 return (
