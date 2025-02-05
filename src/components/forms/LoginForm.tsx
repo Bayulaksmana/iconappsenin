@@ -1,5 +1,7 @@
+"use client"
+
 export default function LoginForm(){
-return <div className="grid place-items-center h-screen">
+return <div className="grid place-items-center h-screen"> 
     <div className="shadow-lg p-5 rounded-lg border-t-4 border-lamaSkyLight">
         <h1 className="text-xl font-bold my-4">Login to </h1>
         <form className="flex flex-col gap-3" typeof="text">

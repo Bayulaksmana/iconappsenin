@@ -10,7 +10,7 @@ items: [
 icon: "/home.png",
 label: "Home",
 href: "/",
-visible: ["admin", "teacher", "student", "parent"],
+visible: ["admin", "tl", "tw", "ts"],
 },
 {
 icon: "/teacher.png",
