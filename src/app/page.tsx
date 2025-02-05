@@ -1,8 +1,9 @@
 "use client";
+import LoginForm from "@/components/forms/LoginForm";
 import { useEffect, useState } from "react";
 
 export default function MyComponent() {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -10,17 +11,19 @@ export default function MyComponent() {
         const response = await data.json();
         setPosts(response.posts);
         console.log(response);
-      } 
-      catch (error) 
-      {
+      } catch (error) {
         console.log(error);
       }
     };
     fetchData();
   }, []);
-  return <div>tes pasing data
-    {posts.map(post => (
-      <div>{post.email}</div>
-    ))}
-  </div>;
+  return (
+    <div>
+      tes pasing data
+      {/* {posts.map(post => (
+    <div>{post.email}</div>
+    ))} */}
+      <LoginForm />
+    </div>
+  );
 }
