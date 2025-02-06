@@ -7,7 +7,6 @@ const result= await executeQuery("select * from users where id = ?", [1]);
 return(
 <div>
     <h1>Coba Pasing Data</h1>
-    {JSON.stringify(result)}
 </div>
 );
 };
