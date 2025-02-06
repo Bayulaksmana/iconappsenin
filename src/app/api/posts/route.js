@@ -1,14 +1,15 @@
-import { createConnetion } from "../../../lib/db.js";
+import executeQuery from "../../../lib/db.js";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-    try{
-        const db = await createConnetion()
-        const sql = "SELECT * From users"
-        const [posts] = await db.query(sql)
-        return NextResponse.json({posts: posts})
-    } catch(error){
-        console.log(error)
-        return NextResponse.json({error: error.message})
-    }
+  try {
+    const db = await executeQuery();
+    const sql = "SELECT * From anggotas";
+    const [query] = await db.createConnection(sql);
+    await db.end();
+    return NextResponse.json({ posts: query });
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json({ error: "database tidak terhubung",} , {status: 500});
+  }
 }
