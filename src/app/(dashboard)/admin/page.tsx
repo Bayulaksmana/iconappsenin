@@ -3,7 +3,6 @@ import AttendanceChart from "@/components/AttendanceChart";
 import CountChart from "@/components/CountChart";
 import EventCalendar from "@/components/EventCalendar";
 import UserCard from "@/components/UserCard";
-import PegawaiListPage from "../list/pegawai/page";
 import AbsenListData from "../list/absensi/page";
 
 const AdminPage = () => {

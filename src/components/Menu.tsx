@@ -110,7 +110,7 @@ visible: ["admin", "teacher", "student", "parent"],
 {
 icon: "/logout.png",
 label: "Logout",
-href: "/logout",
+href: "/signin",
 visible: ["admin", "teacher", "student", "parent"],
 },
 ],
