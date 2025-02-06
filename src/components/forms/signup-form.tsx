@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
+import { useActionState } from "react";
 import {
   CardTitle,
   CardDescription,
@@ -10,14 +10,31 @@ import {
   CardFooter,
   Card,
 } from "@/components/ui/card";
-
+import { ZodErrors } from "@/components/costum/zod-error";
+import { registerUserAction } from "@/app/data/auth-actions";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { SubmitButton } from "@/components/costum/submit-button";
+
+const INITIAL_STATE = {
+  data: null,
+};
+
 
 export function SignupForm() {
+  const [formState, formAction] = useActionState(
+    registerUserAction,
+    INITIAL_STATE
+  );
+
+
+   console.log("## will render on client ##");
+   console.log(formState);
+   console.log("###########################");
+   
   return (
     <div className="w-full max-w-md">
-      <form>
+      <form action={formAction}>
         <Card>
           <CardHeader className="space-y-1">
             <CardTitle className="text-3xl font-bold">Sign Up</CardTitle>
@@ -34,6 +51,7 @@ export function SignupForm() {
                 type="text"
                 placeholder="username"
               />
+              <ZodErrors error={formState?.zodErrors?.username} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
@@ -43,6 +61,7 @@ export function SignupForm() {
                 type="email"
                 placeholder="name@example.com"
               />
+              <ZodErrors error={formState?.zodErrors?.email} />
             </div>
 
             <div className="space-y-2">
@@ -53,10 +72,18 @@ export function SignupForm() {
                 type="password"
                 placeholder="password"
               />
+              <ZodErrors error={formState?.zodErrors?.password} />
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">
-            <button className="w-full">Sign Up</button>
+            {/* <button className="w-1/3 bg-lamaSky rounded-md font-bold ">
+              Sign Up
+            </button> */}
+            <SubmitButton
+              className="w-full font-semibold"
+              text="Sign Up"
+              loadingText="Loading"
+            />
           </CardFooter>
         </Card>
         <div className="mt-4 text-center text-sm">

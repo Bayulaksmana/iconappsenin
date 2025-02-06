@@ -1,21 +1,15 @@
-import React from 'react'
-import executeQuery from "../lib/db.js"
+import { SigninForm } from "@/components/forms/signin-form";
+import AuthLayout from "./(auth)/layout";
 
 const page = async () => {
-
-const result= await executeQuery("select * from users where id = ?", [1]);
-return(
-<div>
-    <h1>Coba Pasing Data</h1>
-</div>
-);
+  return (
+    <div>
+      <SigninForm/>
+    </div>
+  );
 };
 
-
-export default page
-
-
-
+export default page;
 
 // "use client";
 
@@ -38,13 +32,11 @@ export default page
 // }, []);
 // return (
 // <div>
-    // tes pasing data
-    // {/* {posts.map(post => (
-    // <div>{post.email}</div>
-    // ))} */}
+// tes pasing data
+// {/* {posts.map(post => (
+// <div>{post.email}</div>
+// ))} */}
 
-
-
-    // {/*
-    // );
-    // }
+// {/*
+// );
+// }
